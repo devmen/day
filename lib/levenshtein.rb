@@ -31,7 +31,7 @@
 # with the works, so that any entity that uses the works is notified of this
 # instrument.
 #
-# DISCLAIMER: THE WORKS ARE WITHOUT WARRANTY.  
+# DISCLAIMER: THE WORKS ARE WITHOUT WARRANTY
 #
 
 class Levenshtein
@@ -47,7 +47,7 @@ class Levenshtein
           n, m = s.length, t.length
           return m if (0 == n)
           return n if (0 == m)
-          
+
           d = (0..m).to_a
           x = nil
 

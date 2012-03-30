@@ -19,25 +19,8 @@ class Numeric
   end
 end
 
-##
-#  Force encoding change for Ruby 1.9
-#  for more information see http://goo.gl/alaUM
-#
-class String
-  def encode!
-    (defined?(Encoding) && self.respond_to?(:force_encoding)) ? 
-      self.force_encoding('ASCII-8BIT') : self
-  end
-
-  def to_downcase
-    ::Unicode::downcase(self)
-  end
-end
-
 module Day
-
   class Ru
-
     attr_accessor :date
 
     # getting class variables from 'data' folder contents
