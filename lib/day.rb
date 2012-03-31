@@ -1,17 +1,8 @@
-# coding: utf-8
+# encoding: utf-8
 
-if RUBY_VERSION < "1.9"
-  $KCODE = 'u'
-  require 'rubygems'
-else
-  $LOAD_PATH << '.'
-end
-
-require 'unicode'
 require 'date'
 require 'yaml'
-require 'day/ru/parse'
-require 'day/ru/parse_methods'
+require 'day/ru'
 
 class Numeric
   def days
@@ -19,29 +10,9 @@ class Numeric
   end
 end
 
-module Day
-  class Ru
-    attr_accessor :date
-
-    # getting class variables from 'data' folder contents
-    Dir.glob('../data/ru/*.yml') do |yml|
-      class_variable_set(
-        "@@#{yml.gsub(/(\.\.\/data\/ru\/|\.yml)/, '')}".to_sym, YAML::load(File.read(yml))
-      )
-    end
-
-    # Initalizing new object
-    #
-    # @param [String] string natural language date designation
-    # @param [Time] now date to count from
-    def initialize(string, now = Time.now)
-      @string, @now = string.strip.to_downcase.encode!, now
-      @week_start = @now - @now.wday.days
-    end
-  end
-end
-
 # API simplifier
-def Day::Ru string
-  Day::Ru.new(string).parse
+module Day
+  def self.Ru(string)
+    Day::Ru.new(string).parse
+  end
 end

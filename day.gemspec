@@ -1,4 +1,4 @@
-# coding: UTF-8
+# encoding: UTF-8
 
 Gem::Specification.new do |s|
 
@@ -12,8 +12,7 @@ Gem::Specification.new do |s|
   s.summary = "Gem for date parsing"
   s.description = "Gem for date parsing (in the scale of the day, hours is not very important in my projects now). It support Russian and Ukrainian (in future) languages."
   s.rubyforge_project = s.name
-
-  s.add_runtime_dependency "unicode", "~> 0.4.2"
+  s.required_ruby_version = Gem::Requirement.new(">= 1.9.2")
 
   s.files  = `git ls-files`.split($\)
   s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

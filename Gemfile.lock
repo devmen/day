@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     day (0.0.5)
-      unicode (~> 0.4.2)
 
 GEM
   remote: http://rubygems.org/

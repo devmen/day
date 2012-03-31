@@ -1,4 +1,4 @@
-# coding: utf-8
+# encoding: utf-8
 
 require "test/unit"
 require "day"
@@ -20,7 +20,7 @@ class DayTest < Test::Unit::TestCase
   def test_001_tomorrow
     assert_equal parse('завтра'), Time.mktime(2012, 3, 23)
   end
-  
+
   def test_002_today
     assert_equal parse('сегодня'), Time.mktime(2012, 3, 22)
   end
@@ -52,9 +52,4 @@ class DayTest < Test::Unit::TestCase
   def test_008_since_2_days
     assert_equal parse('через 2 дня'), Time.mktime(2012, 3, 24)
   end
-
-  # def test_009_since_10_days
-  #   assert_equal parse('через 10 дней'), Time.mktime(2012, 4, 1, 01, 00)
-  # end
-
 end
